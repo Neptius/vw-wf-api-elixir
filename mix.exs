@@ -20,7 +20,7 @@ defmodule VwWfApi.MixProject do
   def application do
     [
       mod: {VwWfApi.Application, []},
-      extra_applications: [:logger, :runtime_tools]
+      extra_applications: [:logger, :runtime_tools, :httpoison]
     ]
   end
 
@@ -44,7 +44,8 @@ defmodule VwWfApi.MixProject do
       {:absinthe, "~> 1.4.0"},
       {:absinthe_plug, "~> 1.4.0"},
       {:absinthe_ecto, "~> 0.1.3"},
-      {:poison, "~> 4.0", override: true}
+      {:poison, "~> 4.0", override: true},
+      {:httpoison, "~> 1.5"}
     ]
   end
 
