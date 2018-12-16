@@ -5,7 +5,11 @@ defmodule VwWfApiWeb.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/api", VwWfApiWeb do
+  scope "/api" do
     pipe_through :api
+
+    forward "/graphiql", Absinthe.Plug.GraphiQL, schema: VwWfApiWeb.Schema, interface: :playground
+
+    forward "/", Absinthe.Plug, schema: VwWfApiWeb.Schema
   end
 end
