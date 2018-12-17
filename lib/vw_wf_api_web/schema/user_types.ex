@@ -1,6 +1,8 @@
 defmodule VwWfApiWeb.Schema.SessionTypes do
   use Absinthe.Schema.Notation
 
+  alias VwWfApi.Repo
+
   object :user do
     field :id, :id
     field :avatar, :string

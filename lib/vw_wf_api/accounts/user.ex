@@ -11,7 +11,7 @@ defmodule VwWfApi.Accounts.User do
     field :personaname, :string
     field :profileurl, :string
     field :steamid, :string
-    has_many :session, Session
+    has_many :sessions, Session
 
     timestamps()
   end
