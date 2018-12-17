@@ -4,6 +4,14 @@ defmodule VwWfApi.Accounts.User do
 
   alias VwWfApi.Accounts.Session
 
+  def data() do
+    Dataloader.Ecto.new(VwWfApi.Repo, query: &query/2)
+  end
+
+  def query(queryable, _params) do
+    queryable
+  end
+
   schema "users" do
     field :avatar, :string
     field :avatarfull, :string
