@@ -1,4 +1,4 @@
-defmodule VwWfApiWeb.Schema.UserTypes do
+defmodule VwWfApiWeb.Schema.SessionTypes do
   use Absinthe.Schema.Notation
 
   object :user do
@@ -9,5 +9,15 @@ defmodule VwWfApiWeb.Schema.UserTypes do
     field :personaname, :string
     field :profileurl, :string
     field :steamid, :string
+    field :sessions, list_of(:session) do
+      resolve fn user, _, _ ->
+        sessions =
+          user
+          |> Ecto.assoc(:sessions)
+          |> Repo.all
+
+        {:ok, sessions}
+      end
+    end
   end
 end

@@ -2,6 +2,8 @@ defmodule VwWfApi.Accounts.User do
   use Ecto.Schema
   import Ecto.Changeset
 
+  alias VwWfApi.Accounts.Session
+
   schema "users" do
     field :avatar, :string
     field :avatarfull, :string
@@ -9,6 +11,7 @@ defmodule VwWfApi.Accounts.User do
     field :personaname, :string
     field :profileurl, :string
     field :steamid, :string
+    has_many :session, Session
 
     timestamps()
   end
