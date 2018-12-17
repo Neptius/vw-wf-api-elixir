@@ -17,6 +17,13 @@ defmodule VwWfApi.Accounts do
       [%User{}, ...]
 
   """
+  def list_users(select) do
+    query = from u in User,
+                 select: ^select
+    Repo.all(query)
+  end
+
+
   def list_users do
     Repo.all(User)
   end

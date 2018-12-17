@@ -7,6 +7,7 @@ defmodule VwWfApiWeb.Schema do
   query do
     @desc "Get all users"
     field :users, list_of(:user) do
+      middleware VwWfApiWeb.Middlewares.HandleFields
       resolve(&Resolvers.User.list_users/3)
     end
   end

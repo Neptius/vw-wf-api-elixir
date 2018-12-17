@@ -1,8 +1,10 @@
 defmodule VwWfApiWeb.Resolvers.User do
   alias VwWfApi.Accounts
 
-  def list_users(_parent, _args, _resolution) do
-    {:ok, Accounts.list_users()}
+  def list_users(_parent, _args, %Resolution{fields: fields} = resolution) do
+    # fields = _resolution.definition.selections
+    # select = Enum.map(fields, &(Map.get(&1, :name)|>String.to_atom))
+    {:ok, Accounts.list_users(fields)}
   end
 
   def login_user(_parent, %{steamid: steamid}, _resolution) do
