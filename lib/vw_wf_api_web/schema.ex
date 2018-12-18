@@ -27,4 +27,8 @@ defmodule VwWfApiWeb.Schema do
   mutation do
     import_fields(:user_mutations)
   end
+
+  subscription do
+    import_fields(:user_subscriptions)
+  end
 end

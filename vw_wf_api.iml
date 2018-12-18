@@ -112,5 +112,6 @@
     <orderEntry type="library" name="cmark" level="project" />
     <orderEntry type="library" name="stream_data" level="project" />
     <orderEntry type="library" name="absinthe_phoenix" level="project" />
+    <orderEntry type="library" name="absinthe_phoenix" level="project" />
   </component>
 </module>

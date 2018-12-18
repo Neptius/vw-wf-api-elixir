@@ -7,6 +7,11 @@ defmodule VwWfApiWeb.Resolvers.User do
     {:ok, Accounts.list_users()}
   end
 
+  def update_user(_parent, %{user: user}, _resolution) do
+     Accounts.get_user!(user.id)
+     |> Accounts.update_user(user)
+  end
+
   def login_user(_parent, %{steamid: steamid}, _resolution) do
     get_user(steamid)
     |> Map.get("response")
