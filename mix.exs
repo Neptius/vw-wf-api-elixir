@@ -43,6 +43,7 @@ defmodule VwWfApi.MixProject do
       {:plug_cowboy, "~> 2.0"},
       {:absinthe, "~> 1.4.0"},
       {:absinthe_plug, "~> 1.4.0"},
+      {:absinthe_phoenix, "~> 1.4.0"},
       {:poison, "~> 4.0", override: true},
       {:httpoison, "~> 1.5"},
       {:ex_doc, "~> 0.19.1"},

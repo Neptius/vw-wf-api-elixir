@@ -1,5 +1,6 @@
 defmodule VwWfApiWeb.Endpoint do
   use Phoenix.Endpoint, otp_app: :vw_wf_api
+  use Absinthe.Phoenix.Endpoint
 
   socket "/socket", VwWfApiWeb.UserSocket,
     websocket: true,

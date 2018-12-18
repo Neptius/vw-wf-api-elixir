@@ -1,6 +1,9 @@
 defmodule VwWfApiWeb.UserSocket do
   use Phoenix.Socket
 
+  use Absinthe.Phoenix.Socket,
+      schema: VwWfApiWeb.Schema
+
   ## Channels
   # channel "room:*", VwWfApiWeb.RoomChannel
 

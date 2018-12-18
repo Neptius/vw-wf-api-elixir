@@ -6,14 +6,16 @@ defmodule VwWfApi.Application do
   use Application
 
   def start(_type, _args) do
+    import Supervisor.Spec
     # List all child processes to be supervised
     children = [
       # Start the Ecto repository
       VwWfApi.Repo,
       # Start the endpoint when the application starts
-      VwWfApiWeb.Endpoint
+      VwWfApiWeb.Endpoint,
       # Starts a worker by calling: VwWfApi.Worker.start_link(arg)
       # {VwWfApi.Worker, arg},
+      supervisor(Absinthe.Subscription, [VwWfApiWeb.Endpoint])
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html

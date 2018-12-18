@@ -8,6 +8,7 @@
       <sourceFolder url="file://$MODULE_DIR$/test" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/absinthe" />
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/absinthe_ecto" />
+      <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/absinthe_phoenix" />
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/absinthe_plug" />
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/certifi" />
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/connection" />
@@ -110,5 +111,6 @@
     <orderEntry type="library" name="httparrot" level="project" />
     <orderEntry type="library" name="cmark" level="project" />
     <orderEntry type="library" name="stream_data" level="project" />
+    <orderEntry type="library" name="absinthe_phoenix" level="project" />
   </component>
 </module>
