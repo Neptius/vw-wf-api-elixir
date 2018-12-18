@@ -8,7 +8,7 @@ defmodule VwWfApiWeb.Schema do
 
   def context(ctx) do
     loader =
-      Dataloader.new
+      Dataloader.new()
       |> Dataloader.add_source(:users, User.data())
       |> Dataloader.add_source(:sessions, Session.data())
 
@@ -20,11 +20,11 @@ defmodule VwWfApiWeb.Schema do
   end
 
   query do
-    import_fields :user_queries
-    import_fields :session_queries
+    import_fields(:user_queries)
+    import_fields(:session_queries)
   end
 
   mutation do
-    import_fields :user_mutations
+    import_fields(:user_mutations)
   end
 end

@@ -7,6 +7,5 @@ defmodule VwWfApi.Repo.Migrations.CreateSessions do
 
       timestamps()
     end
-
   end
 end
