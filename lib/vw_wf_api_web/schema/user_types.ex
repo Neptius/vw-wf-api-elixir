@@ -16,10 +16,6 @@ defmodule VwWfApiWeb.Schema.SessionTypes do
     field :sessions, list_of(:session), resolve: dataloader(:users)
   end
 
-  input_object :create_user_input do
-    field :personaname, non_null(:string)
-  end
-
   input_object :update_user_input do
     field :id, non_null(:id)
     field :personaname, :string
