@@ -4,6 +4,8 @@ defmodule VwWfApi.DevInfo.DevNewTag do
 
 
   schema "dev_news_tag" do
+    field :name, :string
+    field :color, :string
 
     timestamps()
   end

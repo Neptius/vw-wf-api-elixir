@@ -3,6 +3,8 @@ defmodule VwWfApi.Repo.Migrations.CreateDevNewsTag do
 
   def change do
     create table(:dev_news_tag) do
+      add :name, :string
+      add :color, :string
 
       timestamps()
     end
