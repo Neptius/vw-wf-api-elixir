@@ -5,6 +5,11 @@ defmodule VwWfApiWeb.Schema.SessionTypes do
 
   alias VwWfApiWeb.Resolvers
 
+  enum :sort_order do
+    value :asc
+    value :desc
+  end
+
   object :user do
     field :id, :id
     field :avatar, :string
@@ -21,9 +26,17 @@ defmodule VwWfApiWeb.Schema.SessionTypes do
     field :personaname, :string
   end
 
+  input_object :user_filter do
+    field :id, :integer
+    field :personaname, :string
+    field :steamid, :string
+  end
+
   object :user_queries do
     @desc "Get all users"
     field :list_users, list_of(:user) do
+      arg :filter, :user_filter
+      arg :order, type: :sort_order, default_value: :asc
       # middleware VwWfApiWeb.Middlewares.HandleFields
       resolve(&Resolvers.User.list_users/3)
     end

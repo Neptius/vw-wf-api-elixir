@@ -1,6 +1,5 @@
 defmodule VwWfApiWeb.UserSocket do
   use Phoenix.Socket
-
   use Absinthe.Phoenix.Socket,
       schema: VwWfApiWeb.Schema
 

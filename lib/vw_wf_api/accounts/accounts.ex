@@ -18,8 +18,25 @@ defmodule VwWfApi.Accounts do
       [%User{}, ...]
 
   """
-  def list_users do
-    Repo.all(User)
+  def list_users(args) do
+    args
+    |> Enum.reduce(User, fn
+      {:order, order}, query ->
+        query
+        |> order_by({^order, :personaname})
+      {:filter, filter}, query ->
+        query
+        |> filter_with(filter)
+    end)
+    |> Repo.all
+  end
+
+  defp filter_with(query, filter) do
+
+    Enum.reduce(filter, query, fn
+      {:personaname, personaname}, query ->
+        from q in query, where: ilike(q.personaname, ^"%#{personaname}%")
+    end)
   end
 
   @doc """

@@ -113,7 +113,7 @@ defmodule VwWfApi.DevInfo do
       [%DevNewTag{}, ...]
 
   """
-  def list_dev_news_tag do
+  def list_dev_new_tags do
     Repo.all(DevNewTag)
   end
 
